@@ -6,4 +6,5 @@ sentence-transformers
 google-generativeai
 python-dotenv
 scikit-learn
-altair>=4.2.0
+altair==4.2.2
+
