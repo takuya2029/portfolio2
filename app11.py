@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import pickle
 import matplotlib.pyplot as plt
+import japanize_matplotlib
 import seaborn as sns
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 import matplotlib
@@ -147,6 +148,7 @@ with tab2:
             sns.barplot(x="重要度", y="特徴量", data=coef_df, ax=ax2, palette="viridis")
             ax2.set_title("ロジスティック回帰係数")
             st.pyplot(fig2)
+
 
 
 
