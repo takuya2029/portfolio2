@@ -17,11 +17,6 @@ st.set_page_config(page_title="固化予測アプリ", layout="centered")
 st.title("🧪 固化予測アプリ")
 
 # =========================
-# 日本語フォント対応
-# =========================
-matplotlib.rcParams["font.family"] = "Yu Gothic"
-
-# =========================
 # モデル・スケーラー読み込み
 # =========================
 with open("scaler.pkl", "rb") as f:
@@ -148,6 +143,7 @@ with tab2:
             sns.barplot(x="重要度", y="特徴量", data=coef_df, ax=ax2, palette="viridis")
             ax2.set_title("ロジスティック回帰係数")
             st.pyplot(fig2)
+
 
 
 
