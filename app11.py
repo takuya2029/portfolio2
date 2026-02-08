@@ -35,11 +35,11 @@ with open("feature_columns.pkl", "rb") as f:
 # =========================
 # 学習データ（標準化後・評価用）
 # =========================
-file_path_scaled = r"C:\Users\mt100\Downloads\ポートフォリオ作成\固化予測アプリ\ハイソリP_PAW_PWH_final_MI_r3 - コピー - コピー.csv"
+file_path_scaled = "data2.csv"
 df_scaled = pd.read_csv(file_path_scaled, encoding="utf-8")  # UTF-8
 target_col = "固化"
 # モデル評価用データ（標準化前CSVを使用）
-file_path_eval = r"C:\Users\mt100\Downloads\ポートフォリオ作成\固化予測アプリ\ハイソリP_PAW_PWH_final_MI_r3 _大元.csv"
+file_path_eval = "data"
 df_eval = pd.read_csv(file_path_eval, encoding="utf-8")
 X_eval = df_eval[feature_cols].select_dtypes(include=[float, int])
 y_eval = df_eval[target_col]
@@ -52,7 +52,7 @@ X_eval_scaled = scaler.transform(X_eval)
 # =========================
 # 標準化前データ（代表値用）
 # =========================
-file_path_orig = r"C:\Users\mt100\Downloads\ポートフォリオ作成\固化予測アプリ\ハイソリP_PAW_PWH_final_MI_r3 _大元.csv"
+file_path_orig = "data"
 df_orig = pd.read_csv(file_path_orig, encoding="utf-8")
 X_orig = df_orig[feature_cols].select_dtypes(include=[float, int])
 X_mean_orig = X_orig.mean()  # 標準化前の平均値
@@ -147,5 +147,6 @@ with tab2:
             sns.barplot(x="重要度", y="特徴量", data=coef_df, ax=ax2, palette="viridis")
             ax2.set_title("ロジスティック回帰係数")
             st.pyplot(fig2)
+
 
 
