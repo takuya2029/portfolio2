@@ -10,3 +10,4 @@ altair==4.2.2
 standard-imghdr
 japanize-matplotlib
 seaborn
+matplotlib
